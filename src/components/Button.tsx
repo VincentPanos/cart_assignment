@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import * as React from "react";
 
 type VariantType = "primary" | "secondary" | "icon" | "success";
@@ -16,6 +17,7 @@ export function Button({
   variant = "primary",
   children,
   disabled,
+  className,
   ...rest
 }: React.PropsWithChildren<
   React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: VariantType }
@@ -23,7 +25,11 @@ export function Button({
   const buttonStyle = VariantStyles[variant];
 
   return (
-    <button className={buttonStyle} disabled={disabled} {...rest}>
+    <button
+      className={classNames(buttonStyle, className)}
+      disabled={disabled}
+      {...rest}
+    >
       {children}
     </button>
   );

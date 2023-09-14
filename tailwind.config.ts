@@ -11,6 +11,7 @@ export default {
       green: "#00917C",
       yellow: "#273444",
       tomato: "#8492a6",
+      blue: "#1aa7ec"
     },
     fontFamily: {
       poppins: ["Poppins"],

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { PageContainer } from "./components/PageContainer";
 import { Outlet } from "react-router-dom";
 import { CartProvider } from "./contexts/useCart";
+import { ProductProvider } from "./contexts/useProducts";
 
 const DarkMode = () => {
   const { isDarkMode } = useDarkMode();
@@ -20,14 +21,16 @@ function App() {
   return (
     <>
       <DarkMode />
-      <CartProvider>
-        <div className="w-full min-h-screen bg-light dark:bg-dark space-y-8">
-          <Header title="Cart Assignment" darkMode />
-          <PageContainer>
-            <Outlet />
-          </PageContainer>
-        </div>
-      </CartProvider>
+      <ProductProvider>
+        <CartProvider>
+          <div className="w-full min-h-screen bg-light dark:bg-dark space-y-8">
+            <Header title="Cart Assignment" darkMode />
+            <PageContainer>
+              <Outlet />
+            </PageContainer>
+          </div>
+        </CartProvider>
+      </ProductProvider>
     </>
   );
 }

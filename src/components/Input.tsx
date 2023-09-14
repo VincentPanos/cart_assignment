@@ -15,7 +15,7 @@ export function Input({
       )}
       <input
         className={classNames(
-          "py-0.5 px-1 font-bold rounded-md border-2 border-dark dark:border-light text-dark dark:text-light hover:opacity-50 hover:dark:opacity-80 disabled:hover:opacity-100",
+          "py-0.5 px-1 font-bold rounded-md border-2 border-dark dark:border-light dark:bg-dark text-dark dark:text-light hover:opacity-50 hover:dark:opacity-80 disabled:hover:opacity-100",
           className
         )}
         id={name}

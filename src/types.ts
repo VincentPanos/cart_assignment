@@ -14,3 +14,9 @@ export interface CartItem {
   id: string;
   amount: number;
 }
+
+export interface Step {
+  label: string;
+  to: string;
+  disabled?: boolean;
+}
