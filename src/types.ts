@@ -10,7 +10,7 @@ export interface Product {
 
 export type Cart = CartItem[];
 
-export interface CartItem {
+export interface CartItem extends Product {
   id: string;
   amount: number;
 }
@@ -20,3 +20,14 @@ export interface Step {
   to: string;
   disabled?: boolean;
 }
+
+export type Header = {
+  label: string;
+  style: string;
+};
+
+export type Voucher = {
+  code: string;
+  discount: number;
+  productIds: string[];
+};

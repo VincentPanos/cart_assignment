@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import * as React from "react";
 
-type VariantType = "primary" | "secondary" | "icon" | "success";
+type VariantType = "primary" | "secondary" | "icon" | "success" | "delete";
 
 const VariantStyles: { [key in VariantType]: string } = {
   primary:
@@ -10,7 +10,9 @@ const VariantStyles: { [key in VariantType]: string } = {
     "py-1.5 px-4 font-bold rounded-md border-2 border-dark dark:border-light text-dark dark:text-light hover:opacity-50 hover:dark:opacity-80 disabled:opacity-20",
   icon: "py-1.5 px-4 disabled:opacity-20 hover:opacity-70",
   success:
-    "bg-green text-light rounded-md hover:opacity-80 py-1.5 px-4 font-bold disabled:opacity-20",
+    "bg-green text-light rounded-md hover:opacity-80 py-1.5 px-2 font-bold disabled:opacity-20",
+  delete:
+    "bg-red text-light rounded-md hover:opacity-80 py-1.5 px-4 font-bold disabled:opacity-20",
 };
 
 export function Button({

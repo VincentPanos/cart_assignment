@@ -26,8 +26,8 @@ export function Home() {
           <Card key={product.id} product={product} />
         ))}
       </div>
-      <div className="flex justify-between items-center">
-        <Total small />
+      <div className="flex justify-between items-start">
+        <Total />
         <Pagination next={nextButton} />
       </div>
     </div>

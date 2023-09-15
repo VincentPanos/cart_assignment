@@ -3,12 +3,12 @@ import { Cart } from "../types";
 import { useLocalStorage } from "usehooks-ts";
 
 interface CartContext {
-  cart: Cart | null;
-  setCart: (cart: Cart | null) => void;
+  cart: Cart;
+  setCart: (cart: Cart) => void;
 }
 
 const CartCtx = React.createContext<CartContext>({
-  cart: null,
+  cart: [],
   setCart: () => {},
 });
 
@@ -20,7 +20,7 @@ function ShopCart({
 }
 
 export function CartProvider({ children }: { children?: React.ReactNode }) {
-  const [cart, setCart] = useLocalStorage<Cart | null>("cart", null);
+  const [cart, setCart] = useLocalStorage<Cart>("cart", []);
   return <ShopCart value={{ cart, setCart }}>{children}</ShopCart>;
 }
 

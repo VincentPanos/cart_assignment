@@ -8,13 +8,18 @@ export function Card({ product }: { product: Product }) {
   const { cart, setCart } = useCart();
   const [amount, setAmount] = useState<number>(0);
 
-  const handleCart = (id: string, amount: number) => {
+  const handleCart = (
+    id: string,
+    amount: number,
+    price: number,
+    name: string
+  ) => {
     if (cart) {
       const newCart = cart;
-      newCart.push({ id, amount });
+      newCart.push({ id, amount, price, name });
       setCart(newCart);
     } else {
-      setCart([{ id, amount }]);
+      setCart([{ id, amount, price, name }]);
     }
     setAmount(0);
   };
@@ -40,7 +45,9 @@ export function Card({ product }: { product: Product }) {
         <Counter total={amount} onChange={setAmount} />
         <Button
           variant="success"
-          onClick={() => handleCart(product.id, amount)}
+          onClick={() =>
+            handleCart(product.id, amount, product.price, product.name)
+          }
           disabled={disabled}
           className="w-full"
         >

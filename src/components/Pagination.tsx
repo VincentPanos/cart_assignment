@@ -44,7 +44,12 @@ export function Pagination({ next, back }: { next?: Step; back?: Step }) {
         <StepButton step={next} />
       </div>
     );
-  if (back) return <div></div>;
+  if (back)
+    return (
+      <div className="flex justify-start">
+        <StepButton step={back} back />
+      </div>
+    );
   if (next)
     return (
       <div className="flex justify-end">

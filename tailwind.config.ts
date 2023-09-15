@@ -10,7 +10,7 @@ export default {
       orange: "#ff7849",
       green: "#00917C",
       yellow: "#273444",
-      tomato: "#8492a6",
+      red: "#ff2c2c",
       blue: "#1aa7ec"
     },
     fontFamily: {
